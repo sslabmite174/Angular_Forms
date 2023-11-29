@@ -1,0 +1,45 @@
+[
+    {
+      "fieldName": "name",
+      "fieldLabel": "Full Name",
+      "fieldType": "text",
+      "pattern": "^[A-Za-z\\s]+$"
+    },
+    {
+      "fieldName": "email",
+      "fieldLabel": "Email",
+      "fieldType": "text",
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    },
+    {
+      "fieldName": "gender",
+      "fieldLabel": "Gender",
+      "fieldType": "radio",
+      "options": [
+        {"name": "Male", "value": "male"},
+        {"name": "Female", "value": "female"},
+        {"name": "Other", "value": "other"}
+      ]
+    },
+    {
+      "fieldName": "country",
+      "fieldLabel": "Country",
+      "fieldType": "dropdown",
+      "options": [
+        {"name": "United States", "value": "us"},
+        {"name": "Canada", "value": "ca"},
+        {"name": "United Kingdom", "value": "uk"}
+      ]
+    },
+    {
+      "fieldName": "notifications",
+      "fieldLabel": "Notification Preferences",
+      "fieldType": "checkbox",
+      "options": [
+        {"name": "Email", "value": "email"},
+        {"name": "SMS", "value": "sms"},
+        {"name": "Push Notifications", "value": "push"}
+      ]
+    }
+  ]
+  

@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="saveForm()">
+    <div *ngFor="let field of config">
+      <ng-container [ngSwitch]="field.fieldType">
+        <div *ngSwitchCase="'text'">
+          <label>{{ field.fieldLabel }}</label>
+          <input type="text" [formControlName]="field.fieldName" />
+        </div>
+        <div *ngSwitchCase="'email'">
+          <label>{{ field.fieldLabel }}</label>
+          <input type="email" [formControlName]="field.fieldName" />
+        </div>
+        <div *ngSwitchCase="'number'">
+          <label>{{ field.fieldLabel }}</label>
+          <input type="number" [formControlName]="field.fieldName" />
+        </div>
+        <div *ngSwitchCase="'radio'">
+          <label>{{ field.fieldLabel }}</label>
+          <div *ngFor="let option of field.options">
+            <label>
+              <input type="radio" [formControlName]="field.fieldName" [value]="option.value" />
+              {{ option.name }}
+            </label>
+          </div>
+        </div>
+        <div *ngSwitchCase="'checkbox'">
+          <label>{{ field.fieldLabel }}</label>
+          <div *ngFor="let option of field.options">
+            <label>
+              <input type="checkbox" [formControlName]="field.fieldName + '.' + option.value" />
+              {{ option.name }}
+            </label>
+          </div>
+        </div>
+        <div *ngSwitchCase="'dropdown'">
+          <label>{{ field.fieldLabel }}</label>
+          <select [formControlName]="field.fieldName">
+            <option *ngFor="let option of field.options" [value]="option.value">{{ option.name }}</option>
+          </select>
+        </div>
+      </ng-container>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+  
